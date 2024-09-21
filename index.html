@@ -163,13 +163,14 @@
 
         /* Animation */
         @keyframes glow {
-            0% { text-shadow: 0 0 10px #00d1b2, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
+            0% { text-shadow: 0 0 10px #000000, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
             50% { text-shadow: 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2, 0 0 50px #00d1b2; }
             100% { text-shadow: 0 0 10px #00d1b2, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
         }
 
         h1 {
-            animation: glow 2s infinite alternate;
+            animation: glow 4s infinite alternate;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         /* Social Media Links */
@@ -211,6 +212,31 @@
         transform: scale(1);
         background-color: #004494;
     }
+
+    .typing-container {
+    font-family: 'Courier New', Courier, monospace;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation-iteration-count: infinite;
+    animation: typing 8s steps(60, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+.typing-text {
+    font-size: 24px;
+    display: inline-block;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
     </style>
 </head>
 <body>
@@ -232,9 +258,14 @@
         <!-- Short Description -->
     </section>
 
+    <div class="typing-container">
+        <p class="typing-text">C:\System:> Warning !! you are entering El jausyan darkweb, Warning!! this is a darkweb</p>
+    </div>
+
     <section id="about" class="text-align">
         <p>Hello! I'm Mohammad Khirz El Jausyan, I am very enthusiastic about computer technology issues, especially programming topics, since I was in elementary school I really liked playing computer games and that's what triggered me to really like the world of computers. from there I thought about how a game is made and how a computer made of iron can produce a sophisticated application and even a virtual visual reality that is similar to the real world. from there I began to understand and learn coding through various platforms and various programming languages, one of which I learned was C and C++ until now I am studying Python. I learn through various media and platforms, one of which is through bootcamp events from educational institutions and IT companies. and I continue to be committed to always improving my skills in coding to develop and update computer technology for our beloved country, Indonesia. in my opinion, nowadays there is no reason for us not to work and innovate because nowadays access to information and learning media can be accessed as widely as possible, such as repositories related to research journals and AI chatbots that can provide education and knowledge according to what we ask for.</p>
     </section>
+    <h6>End of lines </h6>
 
     <!-- Skills Section -->
     <section id="skills" class="cv-section">
