@@ -14,6 +14,89 @@
             text-align: center;
         }
 
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 100px 20px;
+            background-color: white; /* Putih untuk membedakan background header */
+        }
+
+        header img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 20px 0 10px;
+            color: black;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: black;
+        }
+
+        header a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        header a:hover {
+            background-color: #444;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: black;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 100px 20px;
+            background-color: white; /* Putih untuk membedakan background header */
+        }
+
         h1, h2, h3 {
             margin: 0;
             padding: 10px;
@@ -28,7 +111,7 @@
         .navbar {
             display: flex;
             justify-content: space-around;
-            background-color: #333;
+            background-color: #000000;
             padding: 15px;
         }
 
@@ -161,6 +244,15 @@
             text-decoration: underline;
         }
 
+        .text3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-style: oblique;
+            font-variant: small-caps;
+            font-size: small;
+            color: #ffffff;
+            letter-spacing: 5px;
+        }
+
         /* Animation */
         @keyframes glow {
             0% { text-shadow: 0 0 10px #000000, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
@@ -176,6 +268,19 @@
         /* Social Media Links */
         .social-links {
             margin-top: 20px;
+        }
+
+        .text2 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: justify;
+            color: #fff;
+            max-width: 600px; /* Maksimal lebar untuk membatasi blok teks */
+            margin: 20px auto; /* Membuat blok teks berada di tengah halaman */
+            padding: 20px; /* Memberikan ruang di dalam blok teks */
+            background-color: #000000; /* Warna latar belakang blok teks */
+            line-height: 1.6; /* Jarak antar baris untuk meningkatkan keterbacaan */
+            border: 1px solid #ddd; /* Memberikan border yang halus */
+            border-radius: 8px
         }
 
         .social-links a {
@@ -213,6 +318,14 @@
         background-color: #004494;
     }
 
+    .nav2 {
+        justify-content: baseline;
+    }
+
+    .text {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
     .typing-container {
     font-family: 'Courier New', Courier, monospace;
     border-right: 2px solid white;
@@ -237,11 +350,13 @@
     50% { border-color: transparent; }
 }
 
+
     </style>
 </head>
 <body>
 
     <!-- Navbar -->
+
     <div class="navbar">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -250,12 +365,28 @@
         <a href="#contact">Contact</a>
     </div>
 
+    <header>
+        <h1 class="text">MOHAMMAD KHIRZ EL JAUSYAN</h1>
+        <div class="typing-container">
+            <p class="typing-text">C:\System:> Undergraduate Student at Sepuluh Nopember Institute of Technologhy</p>
+        </div>
+        <a href="https://wa.me/082138572163" class="project-link">Get to Know Me &gt;</a>
+    </header>
+
     <!-- Main Section -->
     <section id="about" class="cv-section">
         <h1>Welcome To My Personal Website, Lets Know Me More</h1>
         <!-- Profile Picture -->
         <img src="fotokuku.JPG" alt="Profile Picture" class="profile-pic">
         <!-- Short Description -->
+
+        <div class="text2">
+            <p>Nama         : Mohammad Khirz El Jausyan</p>
+            <p>Alamat       : Semarang, Banyumanik </p>
+            <p>TTL          : Ngawi, 1 Juni 2006 </p>
+            <p>Department   : Computer Engineering</p>
+            <p>NRP          : 5024241009</p>
+        </div>
     </section>
 
     <div class="typing-container">
@@ -389,6 +520,14 @@
         </div>
     </section>
 
+    <h3>
+        NOTES:
+    </h3>
+
+    <h5 class="text2">
+        This website is developed with credible human resources. We are open to receive any suggestions from you, your suggestions will be very valuable for us to develop our website. Any misuse will be subject to applicable laws, we are committed to always maintaining existing norms and codes of ethics.
+    </h5>
+
     <!-- Social Media Links -->
     <section id="contact" class="cv-section">
         <h3>Contact Me</h3>
@@ -399,6 +538,7 @@
             <a href="https://instagram.com/eljausyanisme" target="_blank">instagram</a>
         </div>
     </section>
+    <h5 class="text3">© copyright website development team, this website was developed by El-jausyan Technology</h5>
 
 </body>
 </html>
