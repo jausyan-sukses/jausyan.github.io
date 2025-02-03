@@ -1,544 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EL-JAUSYAN-TECH</title>
-    <style>
-        /* Body and Basic Styles */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #000000;
-            color: #00d1b2; /* Blue Tosca */
-            text-align: center;
+    <!--     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159411627-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
         }
+        gtag('js', new Date());
 
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 100px 20px;
-            background-color: white; /* Putih untuk membedakan background header */
-        }
-
-        header img {
-            width: 200px;
-            height: auto;
-            border-radius: 50%;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin: 20px 0 10px;
-            color: black;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: black;
-        }
-
-        header a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        header a:hover {
-            background-color: #444;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background-color: black;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 100px 20px;
-            background-color: white; /* Putih untuk membedakan background header */
-        }
-
-        h1, h2, h3 {
-            margin: 0;
-            padding: 10px;
-            color: #00d1b2;
-        }
-
-        p {
-            color: #ccc;
-        }
-
-        /* Navbar Styling */
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #000000;
-            padding: 15px;
-        }
-
-        .navbar a {
-            color: #00d1b2;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Main Section Styling */
-        .cv-section {
-            margin-bottom: 0px;
-            line-height: 30px;
-            margin-left: 20px;
-            margin-right: 20px;
-            padding: 100px 0;
-            font-variant: initial;
-            font-size: 18px;
-        }
-
-        .text-align {
-            font-family: 'Courier New', Courier, monospace;
-            margin-bottom: 0px;
-            line-height: 30px;
-            margin-left: 20px;
-            margin-right: 20px;
-            text-align: justify;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        /* Profile Image Styling */
-        .profile-pic {
-            width: 190px;
-            height: 260px;
-            border-radius: 0%;
-            border: 4px solid #00d1b2;
-            margin-bottom: 40px;
-            margin-top: 150px;
-        }
-
-        /* Skills Section */
-        .skills-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            background-color: #1e1e1e;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            text-align: left;
-        }
-
-        /* Education Section */
-        .education-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .education-list li {
-            background-color: #1e1e1e;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            text-align: left;
-        }
-
-        /* Projects Section */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-title {
-            color: #2f8f2d;
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .project-description {
-            color: #555;
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        .project-link {
-            color: #2f8f2d;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            display: inline-block;
-            font-size: 0.9rem;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-        }
-
-        .text3 {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-style: oblique;
-            font-variant: small-caps;
-            font-size: small;
-            color: #ffffff;
-            letter-spacing: 5px;
-        }
-
-        /* Animation */
-        @keyframes glow {
-            0% { text-shadow: 0 0 10px #000000, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
-            50% { text-shadow: 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2, 0 0 50px #00d1b2; }
-            100% { text-shadow: 0 0 10px #00d1b2, 0 0 20px #00d1b2, 0 0 30px #00d1b2, 0 0 40px #00d1b2; }
-        }
-
-        h1 {
-            animation: glow 4s infinite alternate;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        /* Social Media Links */
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .text2 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: justify;
-            color: #fff;
-            max-width: 600px; /* Maksimal lebar untuk membatasi blok teks */
-            margin: 20px auto; /* Membuat blok teks berada di tengah halaman */
-            padding: 20px; /* Memberikan ruang di dalam blok teks */
-            background-color: #000000; /* Warna latar belakang blok teks */
-            line-height: 1.6; /* Jarak antar baris untuk meningkatkan keterbacaan */
-            border: 1px solid #ddd; /* Memberikan border yang halus */
-            border-radius: 8px
-        }
-
-        .social-links a {
-            margin: 0 10px;
-            font-size: 2rem;
-            color: #00d1b2;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: #00ffcc;
-        }
-
-        .button-link {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-left: 10px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #fff;
-        background-color: #007bff;
-        text-decoration: none;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .button-link:hover {
-        background-color: #0056b3;
-        transform: scale(1.1);
-    }
-
-    .button-link:active {
-        transform: scale(1);
-        background-color: #004494;
-    }
-
-    .nav2 {
-        justify-content: baseline;
-    }
-
-    .text {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    .typing-container {
-    font-family: 'Courier New', Courier, monospace;
-    border-right: 2px solid white;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation-iteration-count: infinite;
-    animation: typing 8s steps(60, end) infinite, blink-caret 0.75s step-end infinite;
-}
-
-.typing-text {
-    font-size: 24px;
-    display: inline-block;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    50% { border-color: transparent; }
-}
-
-
-    </style>
+        gtag('config', 'UA-159411627-1');
+    </script> -->
+    <!-- Caching Disabler-->
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+    
+    
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta charset="utf-8" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <meta name="Description"
+        content="Ishan Sharma ishandeveloper Ishan Inc. Chandigarh, India www.ishandeveloper.com .NET | ML | AI | Python | UI/UX | App Developer | Flutter | Web Developer" /> -->
+    <title>EL-jausyan Web</title>
+    <!-- <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/favicon.png"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+    <meta name="theme-color" content="#FFE1C4"> -->
+    <!-- <script src="assets/js/app.js"></script>
+    <link rel="manifest" href="manifest.json"> -->
 </head>
-<body>
 
-    <!-- Navbar -->
+<body id="index-body" style="overflow: hidden;">
+    <div>
+        <nav class="nav-desk">
+            <center>
+                <div class="nav-logo">
+                    <a href="index.html"><img id="logo" src="assets/img/logo2.png"></a>
+                </div>
+                <div class="nav-items">
+                    <ul>
+                        <li><span><a href="index.html">About</a></span></li>
+                        <li><span><a href="work.html">Experiences</a></span></li>
+                        <li><span><a href="index.html">Uses</a></span></li>
+                        <li><span><a href="contact.html">Contact</a></span></li>
+                    </ul>
+                </div>
 
-    <div class="navbar">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+            </center>
+        </nav>
+        <div class="animated fadeIn row" style="width:100vw;animation-duration: 1.5s;">
+            <div class="col-md-6" id="left-hero">
+                <h1 class="hero-tag"><span class="typer" id="main" data-words="Hi, I'm El." data-delay="100"
+                        data-deleteDelay="1000" data-loop="1" style="color:rgb(9, 165, 204)!important;"></span>
+                    &nbsp;</h1>
+                <p class="hero-des">I Learn to develop <b>web</b> apps and <b>flutter</b> apps for a living
+                    and also design <b>user experiences</b>.
+                    Now I am studying at the Sepuluh Nopember Institute of Technology majoring in computer engineering.
+                </p>
+                <script async src="https://unpkg.com/typer-dot-js@0.1.0/typer.js"></script>
+                <button class="animated bounce delay-4s learn-btn">
+                    Learn More
+                </button>
+                <a href="https://wa.me/082138572163" class="contact-btn">Get to Know Me &gt;</a>
+                    </button></a>
+                <div class="social-icons">
+                    <a target="_blank" href="mailto:suksesjausyan@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a target="_blank" href="https://instagram.com/eljausyanisme"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://hackerrank.com/eljausyanisme"><i
+                            class="fab fa-hackerrank"></i></a>
+                    <a target="_blank" href="https://github.com/jausyan-stacks"><i class="fab fa-github"></i></a>
+                    <a target="_blank" href="https://linkedin.com/in/el EL-jausyan"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-6" id="hero-right">
+                <img id="hero-img" src="header.png">
+            </div>
+
+        </div>
     </div>
-
-    <header>
-        <h1 class="text">MOHAMMAD KHIRZ EL JAUSYAN</h1>
-        <div class="typing-container">
-            <p class="typing-text">C:\System:> Undergraduate Student at Sepuluh Nopember Institute of Technologhy</p>
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+            <div></div>
         </div>
-        <a href="https://wa.me/082138572163" class="project-link">Get to Know Me &gt;</a>
-    </header>
-
-    <!-- Main Section -->
-    <section id="about" class="cv-section">
-        <h1>Welcome To My Personal Website, Lets Know Me More</h1>
-        <!-- Profile Picture -->
-        <img src="fotokuku.JPG" alt="Profile Picture" class="profile-pic">
-        <!-- Short Description -->
-
-        <div class="text2">
-            <p>Nama         : Mohammad Khirz El Jausyan</p>
-            <p>Alamat       : Semarang, Banyumanik </p>
-            <p>TTL          : Ngawi, 1 Juni 2006 </p>
-            <p>Department   : Computer Engineering</p>
-            <p>NRP          : 5024241009</p>
+        <div class="menu">
+            <div>
+                <div>
+                    <ul>
+                        <li><a href="#" style="text-decoration: line-through;">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="#">Uses</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <div class="typing-container">
-        <p class="typing-text">C:\System:> Warning !! you are entering El jausyan darkweb, Warning!! this is a darkweb</p>
     </div>
-
-    <section id="about" class="text-align">
-        <p>Hello! I'm Mohammad Khirz El Jausyan, I am very enthusiastic about computer technology issues, especially programming topics, since I was in elementary school I really liked playing computer games and that's what triggered me to really like the world of computers. from there I thought about how a game is made and how a computer made of iron can produce a sophisticated application and even a virtual visual reality that is similar to the real world. from there I began to understand and learn coding through various platforms and various programming languages, one of which I learned was C and C++ until now I am studying Python. I learn through various media and platforms, one of which is through bootcamp events from educational institutions and IT companies. and I continue to be committed to always improving my skills in coding to develop and update computer technology for our beloved country, Indonesia. in my opinion, nowadays there is no reason for us not to work and innovate because nowadays access to information and learning media can be accessed as widely as possible, such as repositories related to research journals and AI chatbots that can provide education and knowledge according to what we ask for.</p>
-    </section>
-    <h6>End of lines </h6>
-
-    <!-- Skills Section -->
-    <section id="skills" class="cv-section">
-        <h2>Skills</h2>
-        <div class="container">
-            <ul class="skills-list">
-                <li>🔹 <strong>C++ Basic Programming</strong> - For Loop, While Loop, Function, Array.</li>
-                <li>🔹 <strong>Mid level Python Programming</strong> - Basic Machine learning, Convolutional Neural Network, YOLO, Tensorflow lib, Keras lib, ImageDataGenerator</li>
-                <li>🔹 <strong>Web Development</strong> - (HTML, CSS, JavaScript)</li>
-                <li>🔹 <strong>Database Management</strong> - (MySQL)</li>
-                <li>🔹 <strong>Version Control</strong> - (Git, GitHub)</li>
-                <li>🔹 <strong>Penetration Testing With Kali Linux</strong> - (SQLMAP, Nmap, Nikto, Metasploit, Burpsuite, Hydra, Hashcat, HashID)</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="cv-section">
-        <h2>Education</h2>
-        <div class="container">
-            <ul class="education-list">
-                <li>
-                    <strong>Bachelor of Computer Engineering</strong> - Sepuluh Nopember Institute Of Technologhy(Since 2024)
-                </li>
-                <li>
-                    <strong>Islamic Senior High School</strong> - Science, Yanbu'ul Qur'an Islamic Senior high school (2021 - 2024)
-                </li>
-                <li>
-                    <strong>Islamic Junior High School</strong> - Yanbu'ul Qur'an Islamic Junior high school (2018 - 2021)
-            </ul>
-        </div>
-    </section>
-
-    <section id="education" class="cv-section"></section>
-        <h2>Certification</h2>
-        <div class="container">
-            <ul class="education-list">
-                <li>
-                    <strong>Fundamental Data Science using Python</strong> - Dicoding Academy 2023
-                    <a href="https://drive.google.com/drive/folders/1HWjWiRGXHi3rnrCP0hWKYQ-puV0Si5pQ?usp=sharing" class="button-link">View Credential</a>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="cv-section">
-        <h2>My Experience</h2>
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <img src="1.png" alt="Project 1 Image">
-                <div class="project-content">
-                    <h3 class="project-title">3rd place winner of the national scientific paper competition</h3>
-                    <p class="project-description">
-                        With the research title "Air pollution detection tool with CNN algorithm in Python language".
-                    </p>
-                    <a href="https://drive.google.com/drive/folders/19acPni7_sSh5Ro2viU0HbJrasI0oCa-i?usp=sharing" class="project-link">Learn More &gt;</a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="2.png" alt="Project 2 Image">
-                <div class="project-content">
-                    <h3 class="project-title">School website development team</h3>
-                    <p class="project-description">
-                        Was once a member of the OSIS multimedia section of the website division, responsible for all website management, both frontend and backend.
-                    </p>
-                    <a href="https://yanbumenawan.sch.id/" class="project-link">Learn More &gt;</a>
-
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="4.jpg" alt="Project 2 Image">
-                <div class="project-content">
-                    <h3 class="project-title">School Multimedia Development Team (School Social Media)</h3>
-                    <p class="project-description">
-                        Was once a member of the OSIS multimedia section of the Cameraman division, responsible for all event Shooting, and editing after events.and responsible about School Social Media content and handling
-                    </p>
-                    <a href="https://www.instagram.com/osmyq.id/?hl=id" class="project-link">Learn More &gt;</a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="5.jpg" alt="Project 2 Image">
-                <div class="project-content">
-                    <h3 class="project-title">language improvement organization</h3>
-                    <p class="project-description">
-                        was once a member of the language quality development team at school and was an MC on several occasions and was also a translator for foreign students.
-                    </p>
-                    <a href="https://yanbumenawan.sch.id/" class="project-link">Learn More &gt;</a>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="7.JPG" alt="Project 2 Image">
-                <div class="project-content">
-                    <h3 class="project-title">experienced in being a journalistic team in the IT support section</h3>
-                    <p class="project-description">
-                        responsible for all computer-related needs of the journalism team including the use of Microsoft Excel, the use of Google Drive, the use of Microsoft Cloud, and planning the rejuvenation of computer inventory.
-                    </p>
-                    <a href="https://yanbumenawan.sch.id/" class="project-link">Learn More &gt;</a>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="3.JPG" alt="Project 3 Image">
-                <div class="project-content">
-                    <h3 class="project-title">Robotics lab assistant in high school since 2019-2023</h3>
-                    <p class="project-description">
-                        Responsible for all extracurricular robotics activities in the programming section that handles all robot development processes owned by the school and develop robots using Arduino microcontrollers in C++ language.
-                    </p>
-                    <a href="https://yanbumenawan.sch.id/" class="project-link">Learn More &gt;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <h3>
-        NOTES:
-    </h3>
-
-    <h5 class="text2">
-        This website is developed with credible human resources. We are open to receive any suggestions from you, your suggestions will be very valuable for us to develop our website. Any misuse will be subject to applicable laws, we are committed to always maintaining existing norms and codes of ethics.
-    </h5>
-
-    <!-- Social Media Links -->
-    <section id="contact" class="cv-section">
-        <h3>Contact Me</h3>
-        <div class="social-links">
-            <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/yourtwitter" target="_blank">Twitter</a>
-            <a href="https://instagram.com/eljausyanisme" target="_blank">instagram</a>
-        </div>
-    </section>
-    <h5 class="text3">© copyright website development team, this website was developed by El-jausyan Technology</h5>
-
+    <div class="legal">
+        <a href="legal.html">legal</a>
+    </div>
 </body>
+
 </html>
